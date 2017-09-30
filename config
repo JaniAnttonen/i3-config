@@ -159,8 +159,7 @@ bar {
 exec xrandr --dpi 160
 
 # disable window tiles
-for_window [class="^.*"] border pixel 1
-new_window 1pixel
+for_window [class="^.*"] border pixel 0
 
 # DESKTOP BACKGROUND
 exec feh --bg-scale ~/Pictures/mobileme_ish_ambient_desktop_by_citylover-d3dngfz.jpg
@@ -168,3 +167,11 @@ exec feh --bg-scale ~/Pictures/mobileme_ish_ambient_desktop_by_citylover-d3dngfz
 # INVERTED SCROLLING
 exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
 
+# GTK THEME
+exec --no-startup-id gnome-settings-daemon
+
+# NETWORK MANAGEMENT
+exec --no-startup-id nm-applet
+
+# SYSTEM LOCK BINDING
+bindsym $mod+Shift+o exec "gnome-screensaver-command --lock "
