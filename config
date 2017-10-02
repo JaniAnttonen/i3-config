@@ -182,7 +182,9 @@ exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 
 # SYSTEM LOCK BINDING
-bindsym $mod+Shift+o exec "gnome-screensaver-command --lock "
+bindsym $mod+Shift+o exec --no-startup-id "bash /home/jani/dev/system/i3lock-fancy/lock -gpf Source-Code-Pro -- scrot -z"
+bindsym XF86Sleep exec --no-startup-id "/home/jani/dev/system/i3lock-fancy/lock -gpf Source-Code-Pro -- scrot -z && systemctl suspend"
+bindsym XF86Suspend exec --no-startup-id "/home/jani/dev/system/i3lock-fancy/lock -gpf Source-Code-Pro -- scrot -z && systemctl suspend"
 
 # AUDIO CONTROLS
 # Pulse Audio controls
@@ -190,9 +192,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# SCREEN BRIGHTNESS
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
