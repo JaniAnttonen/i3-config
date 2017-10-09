@@ -158,7 +158,7 @@ bar {
 }
 
 # SCALE UP TEXT SIZE, FOR APPS ADD DPI IN ~/.Xresources
-exec xrandr --dpi 300
+exec xrandr --dpi 180
 
 # IF YOU EVER FUCK SOME GNOME SHIT UP, COPYPASTA THE FOLLOWING
 #gsettings set com.ubuntu.user-interface scale-factor "{'eDP1': 10}"
